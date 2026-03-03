@@ -1,5 +1,9 @@
 schemaVersion: 1.1
-type: webApp
-spec:
-  ingressSpec:
+
+endpoints:
+  - name: web
     port: 3000
+    type: REST
+    networkVisibilities:
+      - Public
+    context: /
