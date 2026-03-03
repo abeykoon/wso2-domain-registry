@@ -5,6 +5,9 @@ RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 10001 appgroup && useradd -u 10001 -g appgroup appuser
 
+ARG DATABASE_URL=postgresql://dummy:dummy@localhost:5432/dummy
+ENV DATABASE_URL=${DATABASE_URL}
+
 COPY package*.json ./
 RUN npm ci --ignore-scripts
 COPY prisma ./prisma
