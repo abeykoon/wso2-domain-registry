@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import clsx from "clsx";
 
 const navItems = [
@@ -84,22 +85,14 @@ export function Sidebar() {
     <aside className="w-56 bg-gray-900 flex flex-col min-h-screen">
       {/* Logo */}
       <div className="px-4 py-5 border-b border-gray-800">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-wso2-orange rounded-lg flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-              <path
-                fillRule="evenodd"
-                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div>
-            <p className="text-white font-semibold text-sm">Domain</p>
-            <p className="text-gray-400 text-xs">Registry</p>
-          </div>
-        </div>
+        <Image
+          src="/wso2-logo.svg"
+          alt="WSO2"
+          width={90}
+          height={48}
+          priority
+        />
+        <p className="text-gray-400 text-xs mt-1">Domain Registry</p>
       </div>
 
       {/* Navigation */}
