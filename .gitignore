@@ -10,7 +10,6 @@ build/
 
 # Environment
 .env.local
-.env
 
 # Database
 prisma/dev.db

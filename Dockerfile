@@ -8,6 +8,7 @@ RUN groupadd -g 10001 appgroup && useradd -u 10001 -g appgroup appuser
 COPY package*.json ./
 RUN npm ci --ignore-scripts
 COPY prisma ./prisma
+RUN npx prisma generate
 COPY . .
 RUN npm run build
 
@@ -20,4 +21,4 @@ ENV PORT=3000
 USER 10001
 
 EXPOSE 3000
-CMD ["sh", "-c", "npx prisma generate && npx prisma migrate deploy && npm start"]
+CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
