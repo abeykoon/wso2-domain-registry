@@ -7,8 +7,6 @@ RUN groupadd -g 10001 appgroup && useradd -u 10001 -g appgroup appuser
 
 COPY package*.json ./
 RUN npm ci --ignore-scripts
-COPY prisma ./prisma
-RUN npx prisma generate
 COPY . .
 RUN npm run build
 
