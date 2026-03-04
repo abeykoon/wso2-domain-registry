@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 10001 appgroup && useradd -u 10001 -g appgroup appuser
 
+ENV DATABASE_URL=$DATABASE_URL
 COPY package*.json ./
 RUN npm ci --ignore-scripts
 COPY . .
