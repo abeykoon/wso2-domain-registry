@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
 import { anthropic, AGENT_TOOLS, buildSystemPrompt } from "@/lib/claude";
 import { prisma } from "@/lib/db";
